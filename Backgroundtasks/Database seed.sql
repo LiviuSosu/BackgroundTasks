@@ -2,8 +2,8 @@
 SELECT TOP (1000) [Id]
       ,[Title]
       ,[Description]
-      ,[CReatedOn]
-  FROM [BackgroundTasks].[dbo].[Articles]
+      ,[CreatedOn]
+  FROM [BackgroundTasks].[dbo].[Articles] Where CreatedOn > DATEADD(SECOND, -8, GETDATE())
 
   DELETE FROM [BackgroundTasks].[dbo].[Articles]
 
