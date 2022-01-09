@@ -22,18 +22,16 @@ namespace ASP.NET_BackroundTask.Workers
 
             SqlCommand command;
             SqlDataAdapter adapter = new SqlDataAdapter();
-            string sqlCommand = "DELETE FROM [dbo].[Articles] WHERE CreatedOn > DATEADD(SECOND, -8, GETDATE());";
+            string sqlCommand = "DELETE FROM [dbo].[Articles] WHERE CreatedOn < DATEADD(SECOND, -2, GETDATE());";
 
             command = new SqlCommand(sqlCommand, cnn);
 
             while (!cancellationToken.IsCancellationRequested)
             {
-                //Interlocked.Increment(ref number);
-                //logger.LogInformation($"Worker printing number: {number}");
-
                 adapter.DeleteCommand = new SqlCommand(sqlCommand, cnn);
                 adapter.DeleteCommand.ExecuteNonQuery();
-                await Task.Delay(5000);
+                await Task.Delay(2000);
+                logger.LogInformation("SQL COmand executed");
             }
 
             command.Dispose();

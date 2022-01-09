@@ -9,7 +9,7 @@ cnn.Open();
 
 SqlCommand command;
 SqlDataAdapter adapter = new SqlDataAdapter();
-string sqlCommand = "DELETE FROM [dbo].[Articles] WHERE CreatedOn > DATEADD(SECOND, -8, GETDATE());";
+string sqlCommand = "DELETE FROM [dbo].[Articles] WHERE CreatedOn < DATEADD(SECOND, -2, GETDATE());";
 
 command = new SqlCommand(sqlCommand, cnn);
 
