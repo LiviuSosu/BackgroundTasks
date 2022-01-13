@@ -1,9 +1,14 @@
 using Background_WindowsService;
-//citeste aici https://docs.microsoft.com/en-us/dotnet/core/extensions/windows-service
-IHost host = Host.CreateDefaultBuilder(args)
+
+using IHost host = Host.CreateDefaultBuilder(args)
+    .UseWindowsService(options =>
+    {
+        options.ServiceName = ".NET Joke Service";
+    })
     .ConfigureServices(services =>
     {
-        services.AddHostedService<Worker>();
+        services.AddHostedService<WindowsBackgroundService>();
+        services.AddHttpClient<JokeService>();
     })
     .Build();
 
