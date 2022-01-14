@@ -8,13 +8,13 @@ namespace Background_WindowsService
 {
     public sealed class WindowsBackgroundService : BackgroundService
     {
-        private readonly JokeService _jokeService;
+        //private readonly JokeService _jokeService;
         private readonly ILogger<WindowsBackgroundService> _logger;
 
         public WindowsBackgroundService(
-            JokeService jokeService,
+            //JokeService jokeService,
             ILogger<WindowsBackgroundService> logger) =>
-            (_jokeService, _logger) = (jokeService, logger);
+            (/*_jokeService,*/ _logger) = (/*jokeService,*/ logger);
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
