@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
@@ -8,39 +9,27 @@ using System.Threading.Tasks;
 
 namespace Background_WindowsService
 {
-    //public class JokeService
-    //{
-    //    private readonly HttpClient _httpClient;
-    //    private readonly JsonSerializerOptions _options = new()
-    //    {
-    //        PropertyNameCaseInsensitive = true
-    //    };
+    public class JokeService
+    {
+        public void GetJokeAsync()
+        {
+            string connetionString = "Data Source = DESKTOP-M80MDUC\\SQLEXPRESS;Initial Catalog=BackgroundTasks;Integrated Security = True;";
+            SqlConnection cnn;
 
-    //    private const string JokeApiUrl =
-    //        "https://karljoke.herokuapp.com/jokes/programming/random";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
 
-    //    public JokeService(HttpClient httpClient) => _httpClient = httpClient;
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            string sqlCommand = "DELETE FROM [dbo].[Articles] WHERE CreatedOn < DATEADD(SECOND, -2, GETDATE());";
 
-    //    public async Task<string> GetJokeAsync()
-    //    {
-    //        try
-    //        {
-    //            // The API returns an array with a single entry.
-    //            Joke[]? jokes = await _httpClient.GetFromJsonAsync<Joke[]>(
-    //                JokeApiUrl, _options);
+            command = new SqlCommand(sqlCommand, cnn);
 
-    //            Joke? joke = jokes?[0];
+            adapter.DeleteCommand = new SqlCommand(sqlCommand, cnn);
+            adapter.DeleteCommand.ExecuteNonQuery();
 
-    //            return joke is not null
-    //                ? $"{joke.Setup}{Environment.NewLine}{joke.Punchline}"
-    //                : "No joke here...";
-    //        }
-    //        catch (Exception ex)
-    //        {
-    //            return $"That's not funny! {ex}";
-    //        }
-    //    }
-    //}
-
-    //public record Joke(int Id, string Type, string Setup, string Punchline);
+            command.Dispose();
+            cnn.Close();
+        }
+    }
 }

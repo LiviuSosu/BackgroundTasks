@@ -5,7 +5,6 @@ namespace ASP.NET_BackroundTask.Workers
     public class Worker : IWorker
     {
         private readonly ILogger<Worker> logger;
-        private int number = 0;
 
         public Worker(ILogger<Worker> logger)
         {
