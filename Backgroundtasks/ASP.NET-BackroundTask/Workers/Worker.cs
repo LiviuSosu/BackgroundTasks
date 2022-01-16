@@ -30,7 +30,7 @@ namespace ASP.NET_BackroundTask.Workers
                 adapter.DeleteCommand = new SqlCommand(sqlCommand, cnn);
                 adapter.DeleteCommand.ExecuteNonQuery();
                 await Task.Delay(2000);
-                logger.LogInformation("SQL COmand executed");
+                logger.LogInformation("SQL Comand executed");
             }
 
             command.Dispose();

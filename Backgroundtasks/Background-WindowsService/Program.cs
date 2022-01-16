@@ -7,8 +7,8 @@ using IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices(services =>
     {
-        services.AddHostedService<WindowsBackgroundService>();
-        services.AddHttpClient<JokeService>();
+        services.AddHostedService<ScopedBackgroundService>();
+        services.AddScoped<IScopedProcessingService, DefaultScopedProcessingService>();
     })
     .Build();
 

@@ -7,11 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP.NET-BackroundTask", "AS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsScheduler", "WindowsScheduler\WindowsScheduler.csproj", "{75B15793-CE4A-4706-824D-C6FC1921625E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{33D0C8B1-49BB-4441-A857-145838C64806}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP.NET-Hangfire", "ASP.NET-Hangfire\ASP.NET-Hangfire.csproj", "{C6045856-E388-433A-A9B6-FE6F327F4080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Background-WindowsService", "Background-WindowsService\Background-WindowsService.csproj", "{993193D7-F819-414B-857C-66847996F9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Background-WindowsService", "Background-WindowsService\Background-WindowsService.csproj", "{993193D7-F819-414B-857C-66847996F9C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
