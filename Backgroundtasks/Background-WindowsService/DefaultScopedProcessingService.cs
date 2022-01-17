@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Background_WindowsService
 {
     public class DefaultScopedProcessingService : IScopedProcessingService
     {
-        private int _executionCount;
         private readonly ILogger<DefaultScopedProcessingService> _logger;
 
         public DefaultScopedProcessingService(

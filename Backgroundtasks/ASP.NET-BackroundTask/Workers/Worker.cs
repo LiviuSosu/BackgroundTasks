@@ -1,6 +1,4 @@
-﻿using System.Data.SqlClient;
-
-namespace ASP.NET_BackroundTask.Workers
+﻿namespace ASP.NET_BackroundTask.Workers
 {
     public class Worker : IWorker
     {
