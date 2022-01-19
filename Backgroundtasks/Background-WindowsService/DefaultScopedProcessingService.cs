@@ -1,7 +1,4 @@
-﻿
-using System.Data.SqlClient;
-
-namespace Background_WindowsService
+﻿namespace Background_WindowsService
 {
     public class DefaultScopedProcessingService : IScopedProcessingService
     {
