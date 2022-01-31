@@ -12,6 +12,7 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
 	<Using Include="System.Data.SqlClient" />
     <Using Include="System.Data.SqlClient" />
+	<Using Include="Background_WindowsService" />
   </ItemGroup>
 
 </Project>

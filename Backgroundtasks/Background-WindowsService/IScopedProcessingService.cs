@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-
+﻿
 namespace Background_WindowsService
 {
     public interface IScopedProcessingService

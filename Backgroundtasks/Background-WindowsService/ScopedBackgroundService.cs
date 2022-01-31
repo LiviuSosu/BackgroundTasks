@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Background_WindowsService
+﻿namespace Background_WindowsService
 {
     public sealed class ScopedBackgroundService : BackgroundService
     {
