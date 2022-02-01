@@ -1,9 +1,13 @@
 /****** Script for SelectTopNRows command from SSMS  ******/
+
+DECLARE @Timing_Offset AS int;
+SET @Timing_Offset = -8; -- Modify this variable (i.e. -15) if you want to have some more time before running the script
+
 SELECT TOP (1000) [Id]
       ,[Title]
       ,[Description]
       ,[CreatedOn]
-  FROM [BackgroundTasks].[dbo].[Articles] Where CreatedOn > DATEADD(SECOND, -8, GETDATE())
+  FROM [BackgroundTasks].[dbo].[Articles] Where CreatedOn > DATEADD(SECOND, @Timing_Offset, GETDATE())
 
   DELETE FROM [BackgroundTasks].[dbo].[Articles]
 
