@@ -1,4 +1,3 @@
-using Background_WindowsService;
 
 using IHost host = Host.CreateDefaultBuilder(args)
     .UseWindowsService(options =>
