@@ -1,7 +1,4 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-
-string connetionString = "Data Source = DESKTOP-M80MDUC\\SQLEXPRESS;Initial Catalog=BackgroundTasks;Integrated Security = True;";
+﻿string connetionString = "Data Source = DESKTOP-M80MDUC\\SQLEXPRESS;Initial Catalog=BackgroundTasks;Integrated Security = True;";
 SqlConnection cnn;
 
 cnn = new SqlConnection(connetionString);

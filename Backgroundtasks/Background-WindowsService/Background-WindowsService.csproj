@@ -16,6 +16,7 @@
 	<Using Include="System.Data.SqlClient" />
 	<Using Include="System.Threading.Tasks" />
     <Using Include="Background_WindowsService" />
-    <!--<Using Include="" />-->
+    <Using Include="System.Net.Http.Json" />
+    <Using Include="System.Text.Json" />
 	</ItemGroup>
 </Project>
